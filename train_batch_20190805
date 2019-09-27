@@ -1,0 +1,54 @@
+activate tensorflow
+d:
+cd D:\OneDrive\PycharmProjects\keras_yolo2-master
+
+python evaluate_CAM.py -c config_rca_cam_multi.json
+python evaluate_CAM.py -c config_lao_cra_cam.json
+python evaluate_CAM.py -c config_rao_cra_cam.json
+python evaluate_CAM.py -c config_lao_cau_cam.json
+python evaluate_CAM.py -c config_rao_cau_cam.json
+
+nohup python3 train.py -c config_rao_cra_retina.1.json -d 1 > ./out/full_retina_0701RCRA.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_rao_cra_retina.2.json -d 1 > ./out/full_retina_0701RCRA.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_rao_cra_retina.3.json -d 0 > ./out/full_retina_0701RCRA.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_rao_cra_retina.4.json -d 1 > ./out/full_retina_0701RCRA.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &
+
+nohup python3 train.py -c config_rao_cau_retina.1.json -d 0 > ./out/full_retina_0701RCAU.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_rao_cau_retina.2.json -d 1 > ./out/full_retina_0701RCAU.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_rao_cau_retina.3.json -d 0 > ./out/full_retina_0701RCAU.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_rao_cau_retina.4.json -d 1 > ./out/full_retina_0701RCAU.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &
+
+nohup python3 train.py -c config_lao_cra_retina.1.json -d 0 > ./out/full_retina_0701LCRA.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_lao_cra_retina.2.json -d 1 > ./out/full_retina_0701LCRA.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_lao_cra_retina.3.json -d 0 > ./out/full_retina_0701LCRA.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_lao_cra_retina.4.json -d 1 > ./out/full_retina_0701LCRA.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &
+
+nohup python3 train.py -c config_lao_cau_retina.1.json -d 0 > ./out/full_retina_0701LCAU.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_lao_cau_retina.2.json -d 1 > ./out/full_retina_0701LCAU.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_lao_cau_retina.3.json -d 0 > ./out/full_retina_0701LCAU.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_lao_cau_retina.4.json -d 1 > ./out/full_retina_0701LCAU.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &
+
+nohup python3 evaluate.py -c config_rca_retina.json -d 0 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.2.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.3.json -d 0 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.4.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
+
+nohup python3 evaluate.py -c config_rao_cra_retina.1.json -d 0 > ./out/evaluate-full_retina_0701RCRA.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cra_retina.2.json -d 1 > ./out/evaluate-full_retina_0701RCRA.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cra_retina.3.json -d 0 > ./out/evaluate-full_retina_0701RCRA.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cra_retina.4.json -d 1 > ./out/evaluate-full_retina_0701RCRA.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
+
+nohup python3 evaluate.py -c config_rao_cau_retina.1.json -d 0 > ./out/evaluate-full_retina_0701RCAU.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cau_retina.2.json -d 1 > ./out/evaluate-full_retina_0701RCAU.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cau_retina.3.json -d 0 > ./out/evaluate-full_retina_0701RCAU.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_rao_cau_retina.4.json -d 1 > ./out/evaluate-full_retina_0701RCAU.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
+->
+nohup python3 evaluate.py -c config_lao_cra_retina.1.json -d 0 > ./out/evaluate-full_retina_0701LCRA.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra_retina.2.json -d 1 > ./out/evaluate-full_retina_0701LCRA.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra_retina.3.json -d 0 > ./out/evaluate-full_retina_0701LCRA.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra_retina.4.json -d 1 > ./out/evaluate-full_retina_0701LCRA.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
+
+nohup python3 evaluate.py -c config_lao_cau_retina.1.json -d 0 > ./out/evaluate-full_retina_0701LCAU.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cau_retina.2.json -d 1 > ./out/evaluate-full_retina_0701LCAU.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cau_retina.3.json -d 0 > ./out/evaluate-full_retina_0701LCAU.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cau_retina.4.json -d 1 > ./out/evaluate-full_retina_0701LCAU.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
