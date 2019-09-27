@@ -1,0 +1,45 @@
+{
+    "model" : {
+        "backend":              "Retina",
+        "input_size":           512,
+        "anchors":              [0.40,0.71, 0.66,0.43, 1.65,0.79, 0.40,0.71, 0.66,0.43, 1.65,0.79, 0.40,0.71, 0.66,0.43, 1.65,0.79],
+        "max_box_per_image":    10,
+        "labels":               ["normal", "stenosis", "background"],
+        "label_wt":             [0.1, 10.0, 0.1],
+        "threshold_min_wh":     75
+    },
+
+    "train": {
+        "train_image_folder":   "/home/ccong3/data/Core320_candidate_20190701/L/LAO_CAU/image/",
+        "train_annot_folder":   "/home/ccong3/data/Core320_candidate_20190701/L/LAO_CAU/label/ROI.mat",
+
+        "train_times":          4,
+        "pretrained_weights":   "",
+        "feature_extrctor_weights":   "/home/ccong3/hdf5/coronary_weightsC.0701LAO_CAU.0_23_r.best.1.hdf5",
+        "batch_size":           4,
+        "learning_rate":        1e-4,
+        "nb_epochs":            500,
+        "warmup_epochs":        0,
+        "loss_type":            "focal_II",
+        "object_scale":         1.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+        "focal_gamma":          5.0,
+        "focal_alpha":          0.1,
+        "l2_sigma":             3.0,
+        "saved_weights_name":   "/home/ccong3/hdf5/full_yolo_0701LAO_CAU.500_1e-4_50_1.0_5.0_0.1_3.0.3.h5",
+        "feature_trainable":    true,
+        "save_best_only":       true,
+        "debug":                false
+    },
+
+    "valid": {
+        "pretrained_weights":   "/home/ccong3/hdf5/full_yolo_0701LAO_CAU.500_1e-4_50_1.0_5.0_0.1_3.0.3.h5",
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+        "valid_output_folder":   "/home/ccong3/TEMP/Core320_candidate_20190701/obj_detect/L/LAO_CAU/500_1e-4_50_1.0_5.0_0.1_3.0/",
+        "valid_times":          1,
+        "valid_fold":           3
+    }
+}
