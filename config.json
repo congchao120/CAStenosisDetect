@@ -1,0 +1,36 @@
+{
+    "model" : {
+        "backend":              "Inception3",
+        "input_size":           416,
+        "anchors":              [0.14,1.37, 0.40,0.78, 0.53,1.67, 1.01,0.64, 1.11,1.90, 1.38,0.15, 2.15,0.89, 2.64,1.99, 2.67,4.27],
+        "max_box_per_image":    10,        
+        "labels":               ["RBC"]
+    },
+
+    "train": {
+        "train_image_folder":   "E:\\BloodCellDataset\\JPEGImages\\",
+        "train_annot_folder":   "E:\\BloodCellDataset\\Annotations\\",
+          
+        "train_times":          8,
+        "pretrained_weights":   "",
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        5,
+
+        "object_scale":         5.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+
+        "saved_weights_name":   "E:\\hdf5\\full_yolo_bloodcell.h5",
+        "debug":                false
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+
+        "valid_times":          1
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "model" : {
+        "backend":              "Coronary",
+        "input_size":           512,
+        "anchors":              [0.40,0.71, 0.66,0.43, 1.65,0.79],
+        "max_box_per_image":    10,
+        "labels":               ["normal", "stenosis", "background"],
+        "label_wt":             [0.1, 10.0, 0.1],
+        "threshold_min_wh":     10
+    },
+
+    "train": {
+        "train_image_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\DEBUG\\image\\",
+        "train_annot_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\DEBUG\\label\\ROI.mat",
+
+        "train_times":          4,
+        "pretrained_weights":   "",
+        "feature_extrctor_weights":   "E:\\hdf5\\coronary_weightsC.0701R-2.0_23_r.best.3.hdf5",
+        "batch_size":           4,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        0,
+        "loss_type":            "focal_II",
+        "object_scale":         1.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          10.0,
+        "class_scale":          1.0,
+        "focal_gamma":          2.0,
+        "focal_alpha":          0.25,
+        "saved_weights_name":   "E:\\hdf5\\full_yolo_0701R_I.h5",
+        "feature_trainable":    true,
+        "save_best_only":       true,
+        "debug":                true
+    },
+
+    "valid": {
+        "pretrained_weights":   "E:\\hdf5\\full_yolo_0701R_I.h5",
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+        "valid_output_folder":   "E:\\temp\\output\\DEBUG\\",
+        "valid_times":          1,
+        "valid_fold":           1
+    }
+}

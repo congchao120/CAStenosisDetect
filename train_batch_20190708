@@ -1,0 +1,56 @@
+activate tensorflow
+d:
+cd D:\OneDrive\PycharmProjects\InceptionV3
+python TrainCore320_InceptionC_L_0-1-2.py 1 > ./out/TrainCore320_InceptionC_R_0-1-2.m.iswarm.1.out 2>&1
+
+nohup python3 train.py -c config_rca.json > ./out/TrainCore320_InceptionC_0-1-2-r.0701R.continue.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.2000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.2000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
+nohup python3 train.py -c config_rao_cra.json -d 0 > ./out/yolo-rao_cra.0701.out 2>&1 &
+nohup python3 train.py -c config_rao_cau.json -d 1 > ./out/yolo-rao_cau.0701.out 2>&1 &
+
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.rca.2000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.rca.2000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
+python3 evaluate.py -c config_rao_cra.json
+python3 evaluate.py -c config_rao_cau.json
+
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.2000_1e-5_20_10_20_5_0.1-10-0.1.continue.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.2000_1e-5_20_10_20_5_0.1-10-0.1.continue.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.2000_1e-5_20_10_20_5_0.1-10-0.1.continue.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.2000_1e-5_20_10_20_5_0.1-10-0.1.continue.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal.2000_1e-4_2.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal.2000_1e-4_2.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal.2000_1e-4_2.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal_II_2000_2e-5_10_2.0_0.25.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal_II_2000_2e-5_10_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal_II_2000_2e-5_10_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.focal_II_2000_2e-5_10_2.0_0.25.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal_II_2000_2e-5_2_2.0_0.25.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal_II_2000_2e-5_20_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal_II_2000_2e-5_2_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.focal_II_2000_2e-5_20_2.0_0.25.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal_II_2000_2e-5_2_2.0_0.5.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal_II_2000_2e-5_20_2.0_0.5.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal_II_2000_2e-5_2_2.0_0.5.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.focal_II_2000_2e-5_20_2.0_0.5.out 2>&1 &
+
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal_II_5000_1e-4_10_2.0_0.1.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal_II_5000_1e-4_10_2.0_0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal_II_5000_1e-4_10_2.0_0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.focal_II_5000_1e-4_10_2.0_0.1.out 2>&1 &
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.focal_II_5000_1e-4_10_2.0_0.25.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.focal_II_5000_1e-4_10_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_rca.json -d 0 > ./out/evaluate-rca.focal_II_5000_1e-4_10_2.0_0.25.out 2>&1 &
+nohup python3 evaluate.py -c config_lao_cra.json -d 1 > ./out/evaluate-lao_cra.focal_II_5000_1e-4_10_2.0_0.25.out 2>&1 &
+
+
+nohup python3 train.py -c config_rca.json -d 0 > ./out/yolo-rca.stenosis_5000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
+nohup python3 train.py -c config_lao_cra.json -d 1 > ./out/yolo-lao_cra.stenosis_5000_1e-4_20_10_20_5_0.1-10-0.1.out 2>&1 &
