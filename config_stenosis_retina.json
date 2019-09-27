@@ -1,0 +1,45 @@
+{
+    "model" : {
+        "backend":              "Retina",
+        "input_size":           512,
+        "anchors":              [0.40,0.71, 0.66,0.43, 1.65,0.79, 0.40,0.71, 0.66,0.43, 1.65,0.79, 0.40,0.71, 0.66,0.43, 1.65,0.79],
+        "max_box_per_image":    10,
+        "labels":               ["normal", "stenosis", "background"],
+        "label_wt":             [0.1, 10.0, 0.1],
+        "threshold_min_wh":     50
+    },
+
+    "train": {
+        "train_image_folder":   "C:\\OneDrive\\Core320_candidate_20190701\\DEBUG\\image\\",
+        "train_annot_folder":   "C:\\OneDrive\\Core320_candidate_20190701\\DEBUG\\label\\ROI.mat",
+
+        "train_times":          4,
+        "pretrained_weights":   "",
+        "feature_extrctor_weights":   "C:\\hdf5\\coronary_weightsC.0701R-2.0_23_r.best.3.hdf5",
+        "batch_size":           4,
+        "learning_rate":        1e-4,
+        "nb_epochs":            500,
+        "warmup_epochs":        0,
+        "loss_type":            "focal_II",
+        "object_scale":         1.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          0.5,
+        "class_scale":          1.0,
+        "focal_gamma":          2.0,
+        "focal_alpha":          0.25,
+        "l2_sigma":             3.0,
+        "saved_weights_name":   "C:\\hdf5\\full_yolo_0701R_I.h5",
+        "feature_trainable":    true,
+        "save_best_only":       false,
+        "debug":                true
+    },
+
+    "valid": {
+        "pretrained_weights":   "C:\\hdf5\\full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.h5",
+        "valid_image_folder":   "C:\\OneDrive\\Core320_candidate_20190701\\R\\image\\",
+        "valid_annot_folder":   "C:\\OneDrive\\Core320_candidate_20190701\\R\\label\\ROI.mat",
+        "valid_output_folder":   "C:\\temp\\output\\DEBUG\\Total\\",
+        "valid_times":          1,
+        "valid_fold":           1
+    }
+}

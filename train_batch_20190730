@@ -1,0 +1,29 @@
+activate tensorflow
+d:
+cd D:\OneDrive\PycharmProjects\InceptionV3
+python TrainCore320_InceptionC_L_0-1-2.py 1 > ./out/TrainCore320_InceptionC_R_0-1-2.m.iswarm.1.out 2>&1
+
+
+nohup python3 train.py -c config_rca_retina.json -d 0 > ./out/full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.json -d 0 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.json -d 1 > ./out/full_retina_0701R.500_1e-4_25_0.5_2.0_0.25_3.0.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_25_0.5_2.0_0.25_3.0.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.json -d 1 > ./out/full_retina_0701R.500_1e-4_70_0.5_4.0_0.1_3.0.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_70_0.5_4.0_0.1_3.0.out 2>&1 &
+
+nohup python3 train.py -c config_rca_retina.json -d 1 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.out 2>&1 &
+->
+nohup python3 train.py -c config_rca_retina.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.2.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.3.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.4.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &
+
+nohup python3 evaluate.py -c config_rca_retina.json -d 0 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.1.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.2.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.2.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.3.json -d 0 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.3.out 2>&1 &
+nohup python3 evaluate.py -c config_rca_retina.4.json -d 1 > ./out/evaluate-full_retina_0701R.500_1e-4_0.5_2.0_0.25_3.0.4.out 2>&1 &
+
+nohup python3 train.py -c config_rca_retina.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.1.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.2.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.2.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.3.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.3.out 2>&1 &
+nohup python3 train.py -c config_rca_retina.4.json -d 0 > ./out/full_retina_0701R.500_1e-4_50_1.0_5.0_0.1_3.0.4.out 2>&1 &

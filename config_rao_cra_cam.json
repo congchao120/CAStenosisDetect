@@ -1,0 +1,43 @@
+{
+    "model" : {
+        "backend":              "CAM",
+        "input_size":           512,
+        "anchors":              [0.42,0.85, 0.48,1.30, 0.50,2.35, 0.57,0.47, 0.90,0.85, 1.09,1.77, 1.40,0.45, 2.08,1.10, 2.13,2.51],
+        "max_box_per_image":    10,
+        "labels":               ["normal", "stenosis", "background"],
+        "label_wt":             [0.1, 10.0, 0.1],
+        "threshold_min_wh":     75
+    },
+
+    "train": {
+        "train_image_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\L\\LAO_CRA\\image\\",
+        "train_annot_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\L\\LAO_CRA\\label\\ROI.mat",
+
+        "train_times":          4,
+        "pretrained_weights":   "E:\\hdf5\\coronary_weightsC.rcra.0_12_r.best.1.hdf5",
+        "feature_extrctor_weights":   "E:\\hdf5\\full_coronary_model.TOTAL_LAO_CRA.0_1234_d.allin.4321.hdf5",
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            500,
+        "warmup_epochs":        0,
+        "loss_type":            "focal_II",
+        "object_scale":         20.0 ,
+        "no_object_scale":      10.0,
+        "coord_scale":          2.0,
+        "class_scale":          5.0,
+        "focal_gamma":          2.0,
+        "focal_alpha":          0.1,
+        "saved_weights_name":   "E:\\hdf5\\full_coronary_model.TOTAL_LAO_CRA.0_1234_d.allin.4321.hdf5",
+        "feature_trainable":    true,
+        "save_best_only":       true,
+        "debug":                false
+    },
+
+    "valid": {
+        "pretrained_weights":   "E:\\hdf5\\coronary_weightsC.rcra.0_12_r.best.1.hdf5",
+        "valid_image_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\L\\RAO_CRA\\image\\",
+        "valid_annot_folder":   "D:\\OneDrive\\Core320_candidate_20190701\\L\\RAO_CRA\\label\\ROI.mat",
+        "valid_output_folder":   "E:\\temp\\obj_detect\\L\\RAO_CRA_CAM\\",
+        "valid_times":          1
+    }
+}
